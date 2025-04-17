@@ -33,4 +33,8 @@ def webhook():
     return jsonify({"fulfillmentText": "Seus dados foram registrados com sucesso. Em breve, nossa equipe entrará em contato."})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    import os
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
